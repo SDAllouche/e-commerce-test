@@ -11,7 +11,7 @@ class ProductController extends Controller
     public function index()
     {
 
-        $products = Products::all();
+        /*$products = Products::all();
 
         if ($products->count() > 0) {
             return response()->json([
@@ -23,9 +23,8 @@ class ProductController extends Controller
                 'status' => 404,
                 'message' => 'Empty List',
             ]);
-        }
-
-        //return Products::select('id', 'name', 'slug', 'stock', 'categoty')->get();
+        }*/
+        return Products::select('id', 'name', 'slug', 'stock', 'category')->get();
     }
 
     public function add(Request $request)

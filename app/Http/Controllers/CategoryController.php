@@ -11,7 +11,7 @@ class CategoryController extends Controller
     public function index()
     {
 
-        $categories = Categories::all();
+        /*$categories = Categories::all();
 
         if ($categories->count() > 0) {
             return response()->json([
@@ -23,9 +23,9 @@ class CategoryController extends Controller
                 'status' => 404,
                 'message' => 'Empty List',
             ]);
-        }
+        }*/
 
-        //return Categories::select('id', 'name')->get();
+        return Categories::select('id', 'name')->get();
     }
 
     public function add(Request $request)

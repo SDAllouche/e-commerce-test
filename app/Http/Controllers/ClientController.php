@@ -11,7 +11,7 @@ class ClientController extends Controller
 {
     public function index()
     {
-        $clients = Clients::all();
+        /*$clients = Clients::all();
 
         if ($clients->count() > 0) {
             return response()->json([
@@ -23,9 +23,9 @@ class ClientController extends Controller
                 'status' => 404,
                 'message' => 'Empty List',
             ]);
-        }
+        }*/
 
-        //return Clients::select('id', 'name', 'address', 'phone')->get();
+        return Clients::select('id', 'name', 'address', 'phone')->get();
     }
 
     public function add(Request $request)
